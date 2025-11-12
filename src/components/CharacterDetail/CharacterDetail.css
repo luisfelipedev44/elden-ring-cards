@@ -1,0 +1,265 @@
+.character-detail {
+  background: #0a0a0f;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.back-button:hover {
+  background: #d4af37;
+  color: #0a0a0f;
+}
+
+
+.character-hero {
+  width: 100%;
+  height: 100vh; 
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.character-hero.scrolled .hero-background {
+  transform: translateY(-100px) scale(1.05);
+  opacity: 0.3;
+}
+
+.character-hero.scrolled .hero-character-image {
+  filter: brightness(30%) grayscale(20%);
+}
+
+.hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(10, 10, 15, 0.8) 50%,
+    #0a0a0f 100%
+  );
+  z-index: 2;
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero-title.scrolled {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
+  pointer-events: none;
+}
+
+.character-name-hero {
+  color: #ffffff;
+  font-size: 4rem;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.character-subtitle-hero {
+  color: #d4af37;
+  font-size: 1.6rem;
+  font-weight: 300;
+  opacity: 0.9;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.character-content-wrapper {
+  position: relative;
+  z-index: 10;
+  background: #0a0a0f;
+}
+
+.character-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 20px 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.character-name-content {
+  color: #ffffff;
+  font-size: 3rem;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.character-subtitle-content {
+  color: #d4af37;
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+
+.character-quote {
+  color: #d4af37;
+  font-size: 1.6rem;
+  font-style: italic;
+  text-align: center;
+  margin: 50px 0;
+  padding: 30px;
+  border-left: 2px solid #d4af37;
+  border-right: 2px solid #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 8px;
+  line-height: 1.7;
+}
+
+
+.content-text {
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 35px;
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: 
+   'font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;'
+}
+
+.content-text:first-of-type::first-letter {
+  font-size: 4rem;
+  color: #d4af37;
+  float: left;
+  line-height: 1;
+  margin: 0 10px 0 0;
+  padding: 5px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .character-hero {
+    height: 70vh;
+  }
+  
+  .character-name-hero {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .character-subtitle-hero {
+    font-size: 1.2rem;
+  }
+  
+  .character-content {
+    padding: 60px 15px 40px;
+  }
+  
+  .character-name-content {
+    font-size: 2.2rem;
+  }
+  
+  .content-text {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  .character-quote {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  
+  .content-text:first-of-type::first-letter {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-hero {
+    height: 60vh;
+  }
+  
+  .character-name-hero {
+    font-size: 2rem;
+  }
+  
+  .character-content {
+    padding: 40px 10px 30px;
+  }
+  
+  .character-name-content {
+    font-size: 1.8rem;
+  }
+  
+  .content-text {
+    font-size: 1rem;
+  }
+  
+  .character-quote {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+}

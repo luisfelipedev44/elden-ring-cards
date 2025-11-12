@@ -1,0 +1,196 @@
+/* ESTILIZAR OS CARDS E OUTRAS COISAS, PEGAR ANIMACOES DE SITES, TENTAR APRENDER A ESTILIZAR CORRETAMENTE,
+ALTURA LARGURA GAP PADDING TENHO UMA NOÇAO */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;700&display=swap');
+
+:root {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #030314;
+  --bg-card: #2d2d44;
+
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a0a0;
+  --text-gold: #d4c19c;
+  --text-accent: #c9a96e;
+
+  --gold-light: #d4c19c;
+  --gold-medium: #b89b6a;
+  --gold-dark: #8a6f4c;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+
+.app-header {
+  position: relative;
+  background: rgba(15, 15, 36, 0.95);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(212, 193, 156, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.app-header h1 {
+  color: var(--gold-light);
+  font-size: 3rem;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+}
+
+.app-header p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Cinzel', serif;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+}
+
+.back-to-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: 1px solid var(--gold-light);
+  color: var(--gold-light);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.back-to-home:hover {
+  background: var(--gold-light);
+  color: var(--bg-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 193, 156, 0.3);
+}
+
+.social-links-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 588px;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.social-link {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 16px 24px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+}
+
+.social-link:hover {
+  background: rgba(212, 193, 156, 0.2);
+  border: 1px solid var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 193, 156, 0.2);
+}
+
+.link-text {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 60px 20px 30px;
+  }
+  
+  .app-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .app-header p {
+    font-size: 1rem;
+  }
+  
+  .characters-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .back-to-home {
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .social-links-container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 50px 15px 25px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .characters-grid {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .back-to-home {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+}
